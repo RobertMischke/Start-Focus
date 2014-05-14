@@ -1,0 +1,79 @@
+﻿<Window x:Name="Focus_Control" x:Class="FocusControl.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:FocusControl"
+        Title="Start Focus" Height="392" Width="499">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition>
+            </ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="150"></RowDefinition>
+            <RowDefinition Height="32"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <controls:ucHeader_focus_in_progress Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="145" Width="491" />
+        <Border  Grid.Row="1" BorderBrush="#61738B" BorderThickness="0 0 0 1" />
+
+        <Canvas Background="#FFEAEAFD">
+            <Label Content="Keep calm and maintain focus!" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Background="{x:Null}" FontSize="30" FontFamily="Segoe UI Semibold" Height="50" Width="428" Foreground="Black"/>
+        </Canvas>
+
+        <Canvas Background="#FFEAEAFD" Grid.Row="2">
+            <Label Content="Statistics" HorizontalAlignment="Left" Margin="10,-2,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Segoe UI Semibold" Foreground="Black"/>
+        </Canvas>
+
+        <Grid HorizontalAlignment="Left" Margin="15,10,0,0" Grid.Row="3" VerticalAlignment="Top" Width="400">
+            <Grid.Resources>
+                <Style TargetType="{x:Type Label}">
+                    <Setter Property="Padding" Value="0,0,10,0"/>
+                    <Setter Property="FontSize" Value="20"/>
+                </Style>
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="21"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.ColumnSpan="5" Grid.Row="0" BorderBrush="#61738B" BorderThickness="0 0 0 1" />
+            <Label Content="Focus" Grid.Row="0" Grid.Column="0"  HorizontalAlignment="Right" VerticalAlignment="Center"  FontSize="10" FontFamily="Segoe UI Semibold" Foreground="Black"  />
+            <Label Content="Period" Grid.Row="0" Grid.Column="1"  HorizontalAlignment="Left" VerticalAlignment="Center"  FontSize="10" FontFamily="Segoe UI Semibold" Foreground="Black"  />
+            <Label Content="Total" Grid.Row="0" Grid.Column="2"  HorizontalAlignment="Left" VerticalAlignment="Center"  FontSize="10" FontFamily="Segoe UI Semibold" Foreground="Black"  />
+            <Label Content="Interuptions" Grid.Row="0" Grid.Column="3"  HorizontalAlignment="Left" VerticalAlignment="Center"  FontSize="10" FontFamily="Segoe UI Semibold" Foreground="Black"  />
+            <Label Content="Entries" Grid.Row="0" Grid.Column="4"  HorizontalAlignment="Left" VerticalAlignment="Center"  FontSize="10" FontFamily="Segoe UI Semibold" Foreground="Black"  />
+            
+            <Label Content="+14" Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Right" VerticalAlignment="Center"  FontFamily="Segoe UI Semibold" Foreground="Green"  />
+            <Label Content="today" Grid.Row="1" Grid.Column="1"   HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Segoe UI Semibold" Foreground="Black"  />
+            <Label Content="+121" Grid.Row="2" Grid.Column="0"  HorizontalAlignment="Right" VerticalAlignment="Center"  FontFamily="Segoe UI Semibold" Foreground="Black"  />
+            <Label Content="ever" Grid.Row="2" Grid.Column="1"  HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Segoe UI Semibold" Foreground="Black"  />
+            <Label Content="33min" Grid.Row="1" Grid.Column="2" FontSize="15"  HorizontalAlignment="Left" VerticalAlignment="Center"  FontFamily="Segoe UI Semibold" Foreground="Green" />
+            <Label Content="3x (17min)" FontSize="15" Grid.Row="1" Grid.Column="3"  HorizontalAlignment="Left" VerticalAlignment="Center"  FontFamily="Segoe UI Semibold" Foreground="Crimson"  />
+            <Label Content="600min" Grid.Row="2" Grid.Column="2" FontSize="15"  HorizontalAlignment="Left" VerticalAlignment="Center"  FontFamily="Segoe UI Semibold" Foreground="Green" />
+            <Label Content="3x (141min)" FontSize="15" Grid.Row="2" Grid.Column="3"  HorizontalAlignment="Left" VerticalAlignment="Center"  FontFamily="Segoe UI Semibold" Foreground="Crimson"  />
+            
+            <Label Content=""  Grid.Row="2" Grid.Column="4"   >
+                
+            </Label>
+
+            <TextBlock Grid.Row="1" Grid.Column="4" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center"  FontFamily="Segoe UI Semibold" Foreground="DodgerBlue" TextDecorations="Underline">
+                <Run Text="4 (click)"/>
+            </TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="4" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center"  FontFamily="Segoe UI Semibold" Foreground="DodgerBlue" TextDecorations="Underline">
+                <Run Text="71 (click)"/>
+            </TextBlock>            
+
+        </Grid>
+    </Grid>
+
+
+
+</Window>
