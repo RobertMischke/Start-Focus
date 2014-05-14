@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="FocusControl.ucHeader_focus_time_completed"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Height="140" Width="500">
+    <Grid>
+        <TextBlock  TextWrapping="Wrap" LineStackingStrategy="BlockLineHeight" Padding="0" LineHeight="34" HorizontalAlignment="Left" VerticalAlignment="Center" Height="74" Width="Auto" FontSize="30" Margin="80,0,0,66" >
+            <Run Text="You did it,"/>
+        </TextBlock>
+        <TextBlock  TextWrapping="Wrap" LineStackingStrategy="BlockLineHeight" Padding="0" LineHeight="34" HorizontalAlignment="Left" VerticalAlignment="Center" Height="44" Width="Auto" FontSize="15" Margin="80,23,0,73" >
+            <Run Text="and you gained 71 points! Awesome! Well done!"/>
+        </TextBlock>
+        <Button Content="Confirm and continue" HorizontalAlignment="Left" Margin="252,60,0,0" VerticalAlignment="Top" Width="149" Height="24"/>
+
+        <Button Content="Big mistake! I was interrupted by myself"  HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="80,91,0,0" Padding="7,1,1,1" VerticalAlignment="Top" Width="321" Opacity="0.4"/>
+        <Button Content="Big mistake! I was interrupted by the outside world" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="80,116,0,0" VerticalAlignment="Top" Padding="7,1,1,1" Width="321" Opacity="0.4"/>
+
+
+    </Grid>
+</UserControl>
