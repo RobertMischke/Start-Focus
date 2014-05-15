@@ -42,7 +42,13 @@ namespace FocusControl
                 return;
             }
 
-            App.FocusTimer.Start(minutes * 60);
+            if (txtFocusOn.Text.Trim().Length <= 3)
+            {
+                MessageBox.Show("Please use at least 3 letters to describe on what you want to start to focus.");
+                return;
+            }
+
+            App.FocusTimer.Start(minutes * 60, txtFocusOn.Text);
 
             if(FocusStarted != null)
                 FocusStarted(this, new FocusStartedArgs());

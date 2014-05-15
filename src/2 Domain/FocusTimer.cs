@@ -10,14 +10,18 @@ public class FocusTimer
 {
     public event FocusFinishedHandler Finished;
 
+    public string FocusOn;
     public int Minutes{get { return _durationInSecs/60; }}
 
     private int _durationInSecs = 0; 
     private readonly Timer _timer = new Timer();
     private readonly Stopwatch _stopwatch = new Stopwatch();
 
-    public void Start(int seconds)
+
+    public void Start(int seconds, string focusOn)
     {
+        FocusOn = focusOn;
+
         _durationInSecs = seconds;
 
         _timer.AutoReset = true;

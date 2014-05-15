@@ -28,13 +28,16 @@ namespace FocusControl
         {
             InitializeComponent();
 
+            var focusTimer = App.FocusTimer;
+
+            lblFocusOn.Content = "Focus on: '..........'";
             txtTimeLeft.Content = ".......... thinking ..........";
 
             _timer.Interval = 1000;
             _timer.Start();
             _timer.Elapsed += (sender, args) =>
             {
-                var focusTimer = App.FocusTimer;
+                
                 if (!focusTimer.IsRunning())
                     return;
 
@@ -42,6 +45,7 @@ namespace FocusControl
 
                 Dispatcher.Invoke(() =>
                 {
+                    lblFocusOn.Content = "Focus on: '" + focusTimer.FocusOn + "'";
                     txtTimeLeft.Content = String.Format("{0} min {1} sec left of {2} min",
                         timeLeft.Minutes, timeLeft.Seconds, focusTimer.Minutes);    
                 } );
