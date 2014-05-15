@@ -45,10 +45,13 @@
     <Compile Include="FocusFinishedHandler.cs" />
     <Compile Include="FocusSession.cs" />
     <Compile Include="FocusTimer.cs" />
+    <Compile Include="Statistics\GetStatistics.cs" />
     <Compile Include="Persistence\LoadAllSessions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Persistence\SaveFocusSession.cs" />
     <Compile Include="Settings.cs" />
+    <Compile Include="Statistics\Statistics.cs" />
+    <Compile Include="Statistics\StatisticsForPeriod.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

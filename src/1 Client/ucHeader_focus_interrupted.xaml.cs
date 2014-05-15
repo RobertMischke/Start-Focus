@@ -35,6 +35,7 @@ namespace FocusControl
 
         private void btnInterrupConfirm_Click(object sender, RoutedEventArgs e)
         {
+            SaveFocusSession.Run(App.FocusTimer.ToFocusSession());
             InterruptConfirmed(this, new EventArgs());
         }
 

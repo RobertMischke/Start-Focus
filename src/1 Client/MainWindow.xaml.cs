@@ -26,6 +26,8 @@ namespace FocusControl
         {
             InitializeComponent();
 
+            FillStats();
+
             var ucFocusInProgress = new ucHeader_focus_in_progress();
             var ucFocusInterrupted = new ucHeader_focus_interrupted();
             var ucFocusCompleted = new ucHeader_focus_time_completed();
@@ -65,8 +67,44 @@ namespace FocusControl
                 Grid.SetRow(uiElement, controlRow);
 
                 grid.Children.Remove(control);
-                grid.Children.Add(uiElement);                
+                grid.Children.Add(uiElement);
+
+                FillStats();
             });
+        }
+
+        private void FillStats()
+        {
+            var stats = GetStatistics.Run();
+
+            if (stats.Today.FocusMinutes < 0)
+            {
+                lblFocusToday.Content = stats.Today.FocusMinutes;
+                lblFocusToday.Foreground = new SolidColorBrush(Colors.Crimson);
+            }
+            else
+            {
+                lblFocusToday.Content = "+" + stats.Today.FocusMinutes;
+                lblFocusToday.Foreground = new SolidColorBrush(Colors.Green);
+            }
+
+            if (stats.Today.FocusMinutes < 0)
+            {
+                lblFocusEver.Content = stats.Ever.FocusMinutes;
+                lblFocusEver.Foreground = new SolidColorBrush(Colors.Crimson);
+            }
+            else
+            {
+                lblFocusEver.Content = "+" + stats.Ever.FocusMinutes;
+                lblFocusEver.Foreground = new SolidColorBrush(Colors.Green);
+            }
+
+            lblTotalMinToday.Content = Math.Abs(stats.Today.FocusMinutes);
+            lblInterruptsToday.Content = stats.Today.InterruptionCount + "x (" +  stats.Today.InterruptionMinutes + "min)";
+            tbSessionToday.Text = stats.Today.SessionCount + " (click)";
+
+            lblTotalMinEver.Content = Math.Abs(stats.Today.FocusMinutes);
+            tbSessionEver.Text = stats.Ever.SessionCount + " (click)";
         }
     }
 }

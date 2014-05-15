@@ -9,8 +9,6 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using NUnit.Framework;
 
-
-
 public class Session_persistence : BaseTest
 {
     [Test]
@@ -43,8 +41,4 @@ public class Session_persistence : BaseTest
         Console.WriteLine(allSessions.Sum(x => x.Minutes));
         Console.WriteLine(stopWatch.Elapsed);
     }
-
 }
-
-
-

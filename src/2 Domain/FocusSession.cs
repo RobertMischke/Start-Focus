@@ -24,5 +24,6 @@ public class FocusSession
 
     public DateTime DateSaved;
 
+    public bool WasInterrupted { get { return FailedBecauseMyself || FailedBecauseWorld;  }}
 }
 

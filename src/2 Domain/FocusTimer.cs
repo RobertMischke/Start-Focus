@@ -37,6 +37,7 @@ public class FocusTimer
     private DateTime _interruptAnnouncedTime;
     private bool _interruptByMyself;
     private bool _interruptByWorld;
+    private bool _success;
 
     public void Start(int seconds, string focusOn, bool inTotalSilcene, bool withDistractions)
     {
@@ -81,6 +82,21 @@ public class FocusTimer
         _timer.Stop();
         _stopwatch.Stop();
         _stopwatch.Reset();
+    }
+
+    public FocusSession ToFocusSession()
+    {
+        return new FocusSession
+        {
+            FailedBecauseMyself = _interruptByMyself,
+            FailedBecauseWorld = _interruptByWorld,
+            InNoise = InTotalSilence, 
+            InSilence = InTotalSilence,
+            MinutesNet = MinutesNet,
+            Minutes = MinutesWithModificators,
+            Success = _success,
+            On = FocusOn
+        };
     }
 
 }

@@ -50,25 +50,21 @@
             <Label Content="Total" Grid.Row="0" Grid.Column="2"  HorizontalAlignment="Left" VerticalAlignment="Center"  FontSize="10" FontFamily="Segoe UI Semibold" Foreground="Black"  />
             <Label Content="Interuptions" Grid.Row="0" Grid.Column="3"  HorizontalAlignment="Left" VerticalAlignment="Center"  FontSize="10" FontFamily="Segoe UI Semibold" Foreground="Black"  />
             <Label Content="Sessions" Grid.Row="0" Grid.Column="4"  HorizontalAlignment="Left" VerticalAlignment="Center"  FontSize="10" FontFamily="Segoe UI Semibold" Foreground="Black"  />
-            
-            <Label Content="+14" Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Right" VerticalAlignment="Center"  FontFamily="Segoe UI Semibold" Foreground="Green"  />
-            <Label Content="today" Grid.Row="1" Grid.Column="1"   HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Segoe UI Semibold" Foreground="Black"  />
-            <Label Content="+121" Grid.Row="2" Grid.Column="0"  HorizontalAlignment="Right" VerticalAlignment="Center"  FontFamily="Segoe UI Semibold" Foreground="Black"  />
+
+            <Label Name="lblFocusToday" Content="+14"  Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Right" VerticalAlignment="Center"  FontFamily="Segoe UI Semibold" Foreground="Green"  />
+            <Label Content="today"  Grid.Row="1" Grid.Column="1"   HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Segoe UI Semibold" Foreground="Black"  />
+            <Label Name="lblFocusEver" Content="+121" Grid.Row="2" Grid.Column="0"  HorizontalAlignment="Right" VerticalAlignment="Center"  FontFamily="Segoe UI Semibold" Foreground="Black"  />
             <Label Content="ever" Grid.Row="2" Grid.Column="1"  HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Segoe UI Semibold" Foreground="Black"  />
-            <Label Content="33min" Grid.Row="1" Grid.Column="2" FontSize="15"  HorizontalAlignment="Left" VerticalAlignment="Center"  FontFamily="Segoe UI Semibold" Foreground="Green" />
-            <Label Content="3x (17min)" FontSize="15" Grid.Row="1" Grid.Column="3"  HorizontalAlignment="Left" VerticalAlignment="Center"  FontFamily="Segoe UI Semibold" Foreground="Crimson"  />
-            <Label Content="600min" Grid.Row="2" Grid.Column="2" FontSize="15"  HorizontalAlignment="Left" VerticalAlignment="Center"  FontFamily="Segoe UI Semibold" Foreground="Green" />
+            <Label Name="lblTotalMinToday" Content="33min" Grid.Row="1" Grid.Column="2" FontSize="15"  HorizontalAlignment="Left" VerticalAlignment="Center"  FontFamily="Segoe UI Semibold" Foreground="Green" />
+            <Label Name="lblInterruptsToday" Content="3x (17min)" FontSize="15" Grid.Row="1" Grid.Column="3"  HorizontalAlignment="Left" VerticalAlignment="Center"  FontFamily="Segoe UI Semibold" Foreground="Crimson"  />
+            <Label Name="lblTotalMinEver" Content="600min" Grid.Row="2" Grid.Column="2" FontSize="15"  HorizontalAlignment="Left" VerticalAlignment="Center"  FontFamily="Segoe UI Semibold" Foreground="Green" />
             <Label Content="don't worry" FontSize="15" Grid.Row="2" Grid.Column="3"  HorizontalAlignment="Left" VerticalAlignment="Center"  FontFamily="Segoe UI" Foreground="silver"  />
-            
-            <Label Content=""  Grid.Row="2" Grid.Column="4"   >
-                
-            </Label>
 
             <TextBlock Grid.Row="1" Grid.Column="4" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center"  FontFamily="Segoe UI Semibold" Foreground="DodgerBlue" TextDecorations="Underline">
-                <Run Text="4 (click)"/>
+                <Run Name="tbSessionToday" Text="4 (click)"/>
             </TextBlock>
             <TextBlock Grid.Row="2" Grid.Column="4" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center"  FontFamily="Segoe UI Semibold" Foreground="DodgerBlue" TextDecorations="Underline">
-                <Run Text="71 (click)"/>
+                <Run Name="tbSessionEver" Text="71 (click)"/>
             </TextBlock>            
 
         </Grid>
