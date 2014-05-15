@@ -17,10 +17,14 @@ public class FocusTimer
     private readonly Timer _timer = new Timer();
     private readonly Stopwatch _stopwatch = new Stopwatch();
 
+    public bool InTotalSilence;
+    public bool WithDistracionts;
 
-    public void Start(int seconds, string focusOn)
+    public void Start(int seconds, string focusOn, bool inTotalSilcene, bool withDistractions)
     {
         FocusOn = focusOn;
+        InTotalSilence = inTotalSilcene;
+        WithDistracionts = withDistractions;
 
         _durationInSecs = seconds;
 
@@ -53,4 +57,5 @@ public class FocusTimer
         _stopwatch.Stop();
         _stopwatch.Reset();
     }
+
 }

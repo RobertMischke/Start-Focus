@@ -47,8 +47,12 @@ namespace FocusControl
                 MessageBox.Show("Please use at least 3 letters to describe on what you want to start to focus.");
                 return;
             }
-
-            App.FocusTimer.Start(minutes * 60, txtFocusOn.Text);
+            
+            App.FocusTimer.Start(
+                minutes * 60, 
+                txtFocusOn.Text,
+                Convert.ToBoolean(ckbInTotalSilence.IsChecked),
+                Convert.ToBoolean(ckbWithHighDistractions.IsChecked));
 
             if(FocusStarted != null)
                 FocusStarted(this, new FocusStartedArgs());
