@@ -18,7 +18,7 @@
         <Border  Grid.Row="1" BorderBrush="#61738B" BorderThickness="0 0 0 1" />
 
         <Canvas Background="#FFEAEAFD">
-            <Label Content="Keep calm and maintain focus!" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Background="{x:Null}" FontSize="30" FontFamily="Segoe UI Semibold" Height="50" Width="428" Foreground="Black"/>
+            <Label x:Name="lblHeader" Content="Keep calm and start focus!" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Background="{x:Null}" FontSize="30" FontFamily="Segoe UI Semibold" Height="50" Width="428" Foreground="Black"/>
         </Canvas>
 
         <Canvas Background="#FFEAEAFD" Grid.Row="2">

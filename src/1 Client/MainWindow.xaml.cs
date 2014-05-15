@@ -39,6 +39,11 @@ namespace FocusControl
 
         private void SetControl(UIElement uiElement)
         {
+            if (uiElement is ucHeader_start_focus)
+                lblHeader.Content = "Keep calm and start focus!";
+            else
+                lblHeader.Content = "Keep calm and maintain focus!";
+
             const int controlRow = 1;
             const int controlColumn = 0;
 
