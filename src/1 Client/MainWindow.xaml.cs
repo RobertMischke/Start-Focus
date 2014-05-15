@@ -20,6 +20,8 @@ namespace FocusControl
     /// </summary>
     public partial class MainWindow : Window
     {
+        public FocusTimer FocusTimer;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -35,29 +37,34 @@ namespace FocusControl
             ucFocusCompleted.CompleteConfirmed += (sender, args) => SetControl(ucStartFocus);
             ucFocusCompleted.InterrupedByMyself += (sender, args) => SetControl(ucStartFocus);
             ucFocusCompleted.InterruptedByWorld += (sender, args) => SetControl(ucStartFocus);
+
+            App.FocusTimer.Finished += (sender, args) => SetControl(ucFocusCompleted);
         }
 
         private void SetControl(UIElement uiElement)
         {
-            if (uiElement is ucHeader_start_focus)
-                lblHeader.Content = "Keep calm and start focus!";
-            else
-                lblHeader.Content = "Keep calm and maintain focus!";
+            Dispatcher.Invoke(() =>
+            {
+                if (uiElement is ucHeader_start_focus)
+                    lblHeader.Content = "Keep calm and start focus!";
+                else
+                    lblHeader.Content = "Keep calm and maintain focus!";
 
-            const int controlRow = 1;
-            const int controlColumn = 0;
+                const int controlRow = 1;
+                const int controlColumn = 0;
 
-            var control = grid.Children
-              .Cast<UIElement>()
-              .First(e => 
-                  Grid.GetRow(e) == controlRow && 
-                  Grid.GetColumn(e) == controlColumn &&
-                  e is UserControl);
+                var control = grid.Children
+                  .Cast<UIElement>()
+                  .First(e =>
+                      Grid.GetRow(e) == controlRow &&
+                      Grid.GetColumn(e) == controlColumn &&
+                      e is UserControl);
 
-            Grid.SetRow(uiElement, controlRow);
-           
-            grid.Children.Remove(control);
-            grid.Children.Add(uiElement);
+                Grid.SetRow(uiElement, controlRow);
+
+                grid.Children.Remove(control);
+                grid.Children.Add(uiElement);                
+            });
         }
     }
 }

@@ -29,6 +29,21 @@ namespace FocusControl
 
         private void btnStartFocus_Click(object sender, RoutedEventArgs e)
         {
+            int minutes;
+            if (!Int32.TryParse(txtMinutes.Text, out minutes))
+            {
+                MessageBox.Show("Hi, try a valid number - not: '" + txtMinutes.Text + "'.");
+                return;
+            }
+
+            if (minutes == 0)
+            {
+                MessageBox.Show("Hi, try something above 0.");
+                return;
+            }
+
+            App.FocusTimer.Start(minutes * 60);
+
             if(FocusStarted != null)
                 FocusStarted(this, new FocusStartedArgs());
         }

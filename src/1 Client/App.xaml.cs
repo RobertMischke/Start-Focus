@@ -13,5 +13,6 @@ namespace FocusControl
     /// </summary>
     public partial class App : Application
     {
+        public static FocusTimer FocusTimer = new FocusTimer(); 
     }
 }
