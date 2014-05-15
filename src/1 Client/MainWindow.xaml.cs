@@ -31,7 +31,7 @@ namespace FocusControl
             var ucFocusCompleted = new ucHeader_focus_time_completed();
 
             ucStartFocus.FocusStarted += (sender, args) => SetControl(ucFocusInProgress);
-            ucFocusInProgress.Interrupted += args => SetControl(ucFocusInterrupted);
+            ucFocusInProgress.Interrupted += (sender, args) => SetControl(ucFocusInterrupted);
             ucFocusInterrupted.InterruptConfirmed += (sender, args) => SetControl(ucStartFocus);
             ucFocusInterrupted.InterruptCancelled += (sender, args) => SetControl(ucFocusInProgress);
             ucFocusCompleted.CompleteConfirmed += (sender, args) => SetControl(ucStartFocus);
@@ -49,6 +49,8 @@ namespace FocusControl
                     lblHeader.Content = "Keep calm and start focus!";
                 else
                     lblHeader.Content = "Keep calm and maintain focus!";
+
+                ((IHeaderUc)uiElement).Activated();
 
                 const int controlRow = 1;
                 const int controlColumn = 0;

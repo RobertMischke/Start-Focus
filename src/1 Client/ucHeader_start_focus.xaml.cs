@@ -18,13 +18,18 @@ namespace FocusControl
     /// <summary>
     /// Interaction logic for ucHeader_start_focus.xaml
     /// </summary>
-    public partial class ucHeader_start_focus : UserControl
+    public partial class ucHeader_start_focus : UserControl, IHeaderUc
     {
         public event FocusStarted FocusStarted;
 
         public ucHeader_start_focus()
         {
             InitializeComponent();
+        }
+
+        public void Activated()
+        {
+
         }
 
         private void btnStartFocus_Click(object sender, RoutedEventArgs e)

@@ -18,11 +18,16 @@ namespace FocusControl
     /// <summary>
     /// Interaction logic for ucHeader_focus_in_progress.xaml
     /// </summary>
-    public partial class ucHeader_focus_time_completed : UserControl
+    public partial class ucHeader_focus_time_completed : UserControl, IHeaderUc
     {
         public event EventHandler CompleteConfirmed;
         public event EventHandler InterrupedByMyself;
         public event EventHandler InterruptedByWorld;
+
+        public void Activated()
+        {
+
+        }
 
         public ucHeader_focus_time_completed()
         {

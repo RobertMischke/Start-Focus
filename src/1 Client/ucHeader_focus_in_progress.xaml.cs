@@ -19,9 +19,9 @@ namespace FocusControl
     /// <summary>
     /// Interaction logic for ucHeader_focus_in_progress.xaml
     /// </summary>
-    public partial class ucHeader_focus_in_progress : UserControl
+    public partial class ucHeader_focus_in_progress : IHeaderUc
     {
-        public event Interuppted Interrupted;
+        public event EventHandler Interrupted;
         private Timer _timer = new Timer(); 
  
         public ucHeader_focus_in_progress()
@@ -47,28 +47,31 @@ namespace FocusControl
                 {
                     lblFocusOn.Content = "Focus on: '" + focusTimer.FocusOn + "'";
                     txtTimeLeft.Content = String.Format("{0} min {1} sec left of {2} min",
-                        timeLeft.Minutes, timeLeft.Seconds, focusTimer.Minutes);    
+                        timeLeft.Minutes, timeLeft.Seconds, focusTimer.MinutesNet);    
                 } );
                 
             };
         }
 
+        public void Activated()
+        {
+
+        }
+
         private void btnInterruptedOutsideWorld_Click(object sender, RoutedEventArgs e)
         {
-            Interrupted(new InterupptedArgs { InterruptedByOutsideWorld  = true});
+            App.FocusTimer.InterruptAnnounced(byWorld:true);
+            Interrupted(this, new EventArgs());
         }
 
         private void btnInterruptedMyself_Click(object sender, RoutedEventArgs e)
         {
-            Interrupted(new InterupptedArgs { InterruptedByMyself  = true});
+            App.FocusTimer.InterruptAnnounced(byMyself:true);
+            Interrupted(this, new EventArgs());
         }
+
+
     }
 
-    public delegate void Interuppted(InterupptedArgs args);
 
-    public class InterupptedArgs
-    {
-        public bool InterruptedByOutsideWorld;
-        public bool InterruptedByMyself;
-    }
 }

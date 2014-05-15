@@ -18,7 +18,7 @@ namespace FocusControl
     /// <summary>
     /// Interaction logic for ucHeader_focus_in_progress.xaml
     /// </summary>
-    public partial class ucHeader_focus_interrupted : UserControl
+    public partial class ucHeader_focus_interrupted : IHeaderUc
     {
         public event EventHandler InterruptCancelled; 
         public event EventHandler InterruptConfirmed;
@@ -26,6 +26,11 @@ namespace FocusControl
         public ucHeader_focus_interrupted()
         {
             InitializeComponent();
+        }
+
+        public void Activated()
+        {
+            txtPoints.Text = "You lost " + App.FocusTimer.MinutesWithModificators + " minutes!";
         }
 
         private void btnInterrupConfirm_Click(object sender, RoutedEventArgs e)

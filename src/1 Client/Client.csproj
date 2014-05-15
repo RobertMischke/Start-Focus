@@ -53,6 +53,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="IHeaderUc.cs" />
     <Compile Include="ucHeader_focus_time-completed.xaml.cs">
       <DependentUpon>ucHeader_focus_time-completed.xaml</DependentUpon>
     </Compile>

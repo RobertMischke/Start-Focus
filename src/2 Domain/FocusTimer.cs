@@ -11,7 +11,21 @@ public class FocusTimer
     public event FocusFinishedHandler Finished;
 
     public string FocusOn;
-    public int Minutes{get { return _durationInSecs/60; }}
+    public int MinutesNet{get { return _durationInSecs/60; }}
+
+    public int MinutesWithModificators
+    {
+        get
+        {
+            if(InTotalSilence)
+                return (int)Math.Round(MinutesNet * 1.5, 0);
+
+            if (WithDistracionts)
+                return (int)Math.Round(MinutesNet * 0.3, 0);
+
+            return MinutesNet;
+        }
+    }
 
     private int _durationInSecs = 0; 
     private readonly Timer _timer = new Timer();
@@ -19,6 +33,10 @@ public class FocusTimer
 
     public bool InTotalSilence;
     public bool WithDistracionts;
+
+    private DateTime _interruptAnnouncedTime;
+    private bool _interruptByMyself;
+    private bool _interruptByWorld;
 
     public void Start(int seconds, string focusOn, bool inTotalSilcene, bool withDistractions)
     {
@@ -49,6 +67,13 @@ public class FocusTimer
     public TimeSpan GetTimeLeft()
     {
         return new TimeSpan(0, 0, _durationInSecs) - _stopwatch.Elapsed; ;
+    }
+
+    public void InterruptAnnounced(bool byMyself = false, bool byWorld = false)
+    {
+        _interruptByMyself = byMyself;
+        _interruptByWorld = byWorld;
+        _interruptAnnouncedTime = DateTime.Now;
     }
 
     public void Stop()
