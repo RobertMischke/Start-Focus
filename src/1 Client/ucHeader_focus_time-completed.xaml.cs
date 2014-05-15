@@ -20,9 +20,28 @@ namespace FocusControl
     /// </summary>
     public partial class ucHeader_focus_time_completed : UserControl
     {
+        public event EventHandler CompleteConfirmed;
+        public event EventHandler InterrupedByMyself;
+        public event EventHandler InterruptedByWorld;
+
         public ucHeader_focus_time_completed()
         {
             InitializeComponent();
+        }
+
+        private void btnConfirm_Click(object sender, RoutedEventArgs e)
+        {
+            CompleteConfirmed(this, new EventArgs());
+        }
+
+        private void btnInterruptedByMyself_Click(object sender, RoutedEventArgs e)
+        {
+            InterrupedByMyself(this, new EventArgs());
+        }
+
+        private void btnInterruptedByWorld_Click(object sender, RoutedEventArgs e)
+        {
+            InterruptedByWorld(this, new EventArgs());
         }
     }
 }

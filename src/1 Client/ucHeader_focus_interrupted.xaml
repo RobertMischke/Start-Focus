@@ -11,8 +11,8 @@
         <TextBlock  TextWrapping="Wrap" LineStackingStrategy="BlockLineHeight" Padding="0" LineHeight="34" HorizontalAlignment="Left" VerticalAlignment="Center" Height="44" Width="Auto" FontSize="15" Margin="80,72,0,24" >
             <Run Text="You lost 20 points!"/>
         </TextBlock>
-        <Button Content="Confirm and continue" HorizontalAlignment="Left" Margin="239,82,0,0" VerticalAlignment="Top" Width="149" Height="24"/>
-        <Button Content="Back! I pressed the wrong button" HorizontalAlignment="Left" Margin="80,112,0,0" VerticalAlignment="Top" Width="308" Opacity="0.25"/>
+        <Button x:Name="btnInterrupConfirm" Content="Confirm and continue" HorizontalAlignment="Left" Margin="239,82,0,0" VerticalAlignment="Top" Width="149" Height="24" Click="btnInterrupConfirm_Click"/>
+        <Button x:Name="btnBack" Content="Back! I pressed the wrong button" HorizontalAlignment="Left" Margin="80,112,0,0" VerticalAlignment="Top" Width="308" Opacity="0.25" Click="btnBack_Click"/>
 
 
     </Grid>

@@ -20,9 +20,22 @@ namespace FocusControl
     /// </summary>
     public partial class ucHeader_focus_interrupted : UserControl
     {
+        public event EventHandler InterruptCancelled; 
+        public event EventHandler InterruptConfirmed;
+
         public ucHeader_focus_interrupted()
         {
             InitializeComponent();
+        }
+
+        private void btnInterrupConfirm_Click(object sender, RoutedEventArgs e)
+        {
+            InterruptConfirmed(this, new EventArgs());
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            InterruptCancelled(this, new EventArgs());
         }
     }
 }

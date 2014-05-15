@@ -20,9 +20,29 @@ namespace FocusControl
     /// </summary>
     public partial class ucHeader_focus_in_progress : UserControl
     {
+        public event Interuppted Interrupted;
+
         public ucHeader_focus_in_progress()
         {
             InitializeComponent();
         }
+
+        private void btnInterruptedOutsideWorld_Click(object sender, RoutedEventArgs e)
+        {
+            Interrupted(new InterupptedArgs { InterruptedByOutsideWorld  = true});
+        }
+
+        private void btnInterruptedMyself_Click(object sender, RoutedEventArgs e)
+        {
+            Interrupted(new InterupptedArgs { InterruptedByMyself  = true});
+        }
+    }
+
+    public delegate void Interuppted(InterupptedArgs args);
+
+    public class InterupptedArgs
+    {
+        public bool InterruptedByOutsideWorld;
+        public bool InterruptedByMyself;
     }
 }

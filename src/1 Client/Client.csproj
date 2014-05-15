@@ -59,8 +59,8 @@
     <Compile Include="ucHeader_focus_interrupted.xaml.cs">
       <DependentUpon>ucHeader_focus_interrupted.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ucHeader-focus-in-progress.xaml.cs">
-      <DependentUpon>ucHeader-focus-in-progress.xaml</DependentUpon>
+    <Compile Include="ucHeader_focus_in_progress.xaml.cs">
+      <DependentUpon>ucHeader_focus_in_progress.xaml</DependentUpon>
     </Compile>
     <Compile Include="ucHeader_start_focus.xaml.cs">
       <DependentUpon>ucHeader_start_focus.xaml</DependentUpon>
@@ -85,7 +85,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ucHeader-focus-in-progress.xaml">
+    <Page Include="ucHeader_focus_in_progress.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
