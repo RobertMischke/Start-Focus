@@ -9,7 +9,7 @@
             <Run Text="You did it,"/>
         </TextBlock>
         <TextBlock  TextWrapping="Wrap" LineStackingStrategy="BlockLineHeight" Padding="0" LineHeight="34" HorizontalAlignment="Left" VerticalAlignment="Center" Height="44" Width="Auto" FontSize="15" Margin="80,23,0,73" >
-            <Run Text="and you gained 71 points! Awesome! Well done!"/>
+            <Run Name="txtSuccess" Text="and you gained 71 points! Awesome! Well done!"/>
         </TextBlock>
         <Button x:Name="btnConfirm" Content="Confirm and continue" HorizontalAlignment="Left" Margin="252,60,0,0" VerticalAlignment="Top" Width="149" Height="24" Click="btnConfirm_Click"/>
 

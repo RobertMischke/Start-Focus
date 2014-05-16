@@ -41,6 +41,8 @@ namespace FocusControl
             ucFocusCompleted.InterruptedByWorld += (sender, args) => SetControl(ucStartFocus);
 
             App.FocusTimer.Finished += (sender, args) => SetControl(ucFocusCompleted);
+
+            this.WindowState
         }
 
         private void SetControl(UIElement uiElement)
@@ -51,6 +53,9 @@ namespace FocusControl
                     lblHeader.Content = "Keep calm and start focus!";
                 else
                     lblHeader.Content = "Keep calm and maintain focus!";
+
+                if (uiElement is ucHeader_focus_time_completed)
+                    ((ucHeader_focus_time_completed) uiElement).GainAttention(this);
 
                 ((IHeaderUc)uiElement).Activated();
 

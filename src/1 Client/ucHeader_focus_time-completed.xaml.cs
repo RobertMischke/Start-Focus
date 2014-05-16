@@ -26,7 +26,13 @@ namespace FocusControl
 
         public void Activated()
         {
-            
+            txtSuccess.Text = "and you gained " + App.FocusTimer.MinutesWithModificators + " minutes! Awesome! Well done!";
+        }
+
+        public void GainAttention(MainWindow mainWindow)
+        {
+            mainWindow.WindowState = WindowState.Normal;
+            mainWindow.Focus();
         }
 
         public ucHeader_focus_time_completed()
@@ -49,5 +55,7 @@ namespace FocusControl
         {
             InterruptedByWorld(this, new EventArgs());
         }
+
+
     }
 }
