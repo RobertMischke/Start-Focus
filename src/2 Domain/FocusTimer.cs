@@ -28,7 +28,7 @@ public class FocusTimer
     }
 
     private int _durationInSecs = 0; 
-    private readonly Timer _timer = new Timer();
+    private Timer _timer = new Timer();
     private readonly Stopwatch _stopwatch = new Stopwatch();
 
     public bool InTotalSilence;
@@ -47,11 +47,15 @@ public class FocusTimer
 
         _durationInSecs = seconds;
 
+        _timer = new Timer();
         _timer.AutoReset = true;
         _timer.Interval = (double)seconds*1000;
         _timer.Start();
+
         _timer.Elapsed += (sender, args) =>
         {
+            _timer.Stop();
+
             if (Finished != null) 
                 Finished(this, new FocusFinishedArgs());
         };

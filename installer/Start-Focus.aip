@@ -23,10 +23,10 @@
     <ROW Property="AppLogoIcon" Value="applogoicon" MultiBuildValue="DefaultBuild:logo.jpg" Type="1" MsiKey="AppLogoIcon"/>
     <ROW Property="CTRLS" Value="3"/>
     <ROW Property="Manufacturer" Value="by Robert Mischke"/>
-    <ROW Property="ProductCode" Value="1033:{876DE314-9B08-4372-A0FC-DE708CA0770D} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{924BA9CF-5E30-4366-9F44-3C6EAEDF7256} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="Start-Focus"/>
-    <ROW Property="ProductVersion" Value="0.9.0" Type="32"/>
+    <ROW Property="ProductVersion" Value="0.9.1" Type="32"/>
     <ROW Property="RUNAPPLICATION" Value="1" Type="4"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{7939BBCA-6785-4CBE-AB32-8E1136AFA103}"/>
@@ -38,7 +38,7 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
     <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
-    <ROW Directory="StartMenuFolder" Directory_Parent="TARGETDIR" DefaultDir="STARTM~1|StartMenuFolder" IsPseudoRoot="1"/>
+    <ROW Directory="ProgramMenuFolder" Directory_Parent="TARGETDIR" DefaultDir="PROGRA~1|ProgramMenuFolder" IsPseudoRoot="1"/>
     <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
@@ -253,7 +253,7 @@
     <ROW Registry="VersionMinor" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="VersionMinor" Value="#9" Component_="AI_CustomARPName"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
-    <ROW Shortcut="StartFocus" Directory_="StartMenuFolder" Name="STARTF~1|Start Focus" Component_="ProductInformation" Target="[StartMenuFolder]" Hotkey="0" Icon_="logo.exe" IconIndex="0" ShowCmd="1"/>
+    <ROW Shortcut="FocusControl" Directory_="ProgramMenuFolder" Name="STARTF~1|Start Focus" Component_="FocusControl.exe" Target="[#FocusControl.exe]" Hotkey="0" Icon_="logo.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
     <ATTRIBUTE name="UsedTheme" value="surface"/>

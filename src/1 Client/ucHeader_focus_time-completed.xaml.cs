@@ -33,6 +33,12 @@ namespace FocusControl
         {
             mainWindow.WindowState = WindowState.Normal;
             mainWindow.Focus();
+
+            var uri = new Uri("Resources/cheering-1.mp3", UriKind.Relative);
+
+            var player = new MediaPlayer();
+            player.Open(uri);
+            player.Play();
         }
 
         public ucHeader_focus_time_completed()
