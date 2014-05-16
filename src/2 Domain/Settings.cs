@@ -9,6 +9,13 @@ using System.Threading.Tasks;
 
 public class Settings
 {
+    static Settings()
+    {
+        var dirName = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory).Name.ToLower();
+        if (dirName == "debug" || dirName == "release")
+            SessionFileName = "Session.dev.json";
+    }
+
     public static string SessionFileName = "Sessions.json";
 
     public static string GetDirectory()
