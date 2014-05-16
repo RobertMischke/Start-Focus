@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -52,6 +53,13 @@ namespace FocusControl
                 MessageBox.Show("Please use at least 3 letters to describe on what you want to start to focus.");
                 return;
             }
+
+            var matches = Regex.Match(txtFocusOn.Text, "test ([0-9]{1,2}) s");
+            if (matches.Success)
+            {
+                StartTest(Convert.ToInt32(matches.Groups[1].Value));
+                return;
+            }
             
             App.FocusTimer.Start(
                 minutes * 60, 
@@ -61,6 +69,18 @@ namespace FocusControl
 
             if(FocusStarted != null)
                 FocusStarted(this, new FocusStartedArgs());
+        }
+
+        private void StartTest(int seconds)
+        {
+            App.FocusTimer.Start(
+                seconds,
+                txtFocusOn.Text,
+                Convert.ToBoolean(ckbInTotalSilence.IsChecked),
+                Convert.ToBoolean(ckbWithHighDistractions.IsChecked));
+
+            if (FocusStarted != null)
+                FocusStarted(this, new FocusStartedArgs());            
         }
     }
 

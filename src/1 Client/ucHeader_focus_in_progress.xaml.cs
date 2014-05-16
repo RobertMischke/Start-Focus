@@ -30,8 +30,7 @@ namespace FocusControl
 
             var focusTimer = App.FocusTimer;
 
-            lblFocusOn.Content = "Focus on: '..........'";
-            txtTimeLeft.Content = ".......... thinking ..........";
+            Init();
 
             _timer.Interval = 1000;
             _timer.Start();
@@ -53,9 +52,15 @@ namespace FocusControl
             };
         }
 
+        private void Init()
+        {
+            lblFocusOn.Content = "Focus on: '..........'";
+            txtTimeLeft.Content = ".......... thinking ..........";
+        }
+
         public void Activated()
         {
-
+            Init();
         }
 
         private void btnInterruptedOutsideWorld_Click(object sender, RoutedEventArgs e)

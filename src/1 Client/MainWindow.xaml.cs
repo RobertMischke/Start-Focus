@@ -41,8 +41,6 @@ namespace FocusControl
             ucFocusCompleted.InterruptedByWorld += (sender, args) => SetControl(ucStartFocus);
 
             App.FocusTimer.Finished += (sender, args) => SetControl(ucFocusCompleted);
-
-            this.WindowState
         }
 
         private void SetControl(UIElement uiElement)
