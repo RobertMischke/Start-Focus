@@ -29,7 +29,7 @@ public class GetStatistics
         {
             PeriodName = periodName,
             FocusMinutes = sessions.Sum(x => x.WasInterrupted ? - x.Minutes : x.Minutes),
-            TotalMinutes = sessions.Sum(x => x.MinutesNet),
+            TotalMinutes = sessions.Sum(x => x.Minutes),
             InterruptionCount = sessions.Count(x => x.WasInterrupted),
             InterruptionMinutes = sessions.Where(x => x.WasInterrupted).Sum(x => x.Minutes),
             SessionCount = sessions.Count

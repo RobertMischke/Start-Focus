@@ -26,7 +26,7 @@ namespace FocusControl
 
         public void Activated()
         {
-
+            
         }
 
         public ucHeader_focus_time_completed()
@@ -36,6 +36,7 @@ namespace FocusControl
 
         private void btnConfirm_Click(object sender, RoutedEventArgs e)
         {
+            SaveFocusSession.Run(App.FocusTimer.ToFocusSession());
             CompleteConfirmed(this, new EventArgs());
         }
 
