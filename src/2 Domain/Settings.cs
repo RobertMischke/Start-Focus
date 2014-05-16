@@ -13,7 +13,7 @@ public class Settings
     {
         var dirName = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory).Name.ToLower();
         if (dirName == "debug" || dirName == "release")
-            SessionFileName = "Session.dev.json";
+            SessionFileName = "Sessions.dev.json";
     }
 
     public static string SessionFileName = "Sessions.json";
@@ -31,10 +31,8 @@ public class Settings
     {
         var fullPath = Path.Combine(GetDirectory(), SessionFileName);
         if (!File.Exists(fullPath)){
-            File.Create(fullPath);
+            File.Create(fullPath).Dispose();
         }
-            
-
 
         return fullPath;
     }
