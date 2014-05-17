@@ -25,10 +25,10 @@
     <ROW Property="CTRLS" Value="3"/>
     <ROW Property="MSIFASTINSTALL" MultiBuildValue="DefaultBuild:1"/>
     <ROW Property="Manufacturer" Value="by Robert Mischke"/>
-    <ROW Property="ProductCode" Value="1033:{DB4D4EE4-4070-4062-B059-48B89F2BC811} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{5F34D573-FE11-471D-BC40-48243F2826C0} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="Start-Focus"/>
-    <ROW Property="ProductVersion" Value="0.9.4" Type="32"/>
+    <ROW Property="ProductVersion" Value="0.9.6" Type="32"/>
     <ROW Property="RUNAPPLICATION" Value="1" Type="4"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
     <ROW Property="UpgradeCode" Value="{7939BBCA-6785-4CBE-AB32-8E1136AFA103}"/>

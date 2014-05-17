@@ -106,7 +106,7 @@ namespace FocusControl
             lblInterruptsToday.Content = stats.Today.InterruptionCount + "x (" +  stats.Today.InterruptionMinutes + "min)";
             tbSessionToday.Text = stats.Today.SessionCount + " (click)";
 
-            lblTotalMinEver.Content = Math.Abs(stats.Today.TotalMinutes);
+            lblTotalMinEver.Content = Math.Abs(stats.Ever.TotalMinutes);
             tbSessionEver.Text = stats.Ever.SessionCount + " (click)";
         }
     }
